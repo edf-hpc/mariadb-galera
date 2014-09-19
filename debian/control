@@ -1,4 +1,4 @@
-Source: mariadb-5.5
+Source: mariadb-galera
 Section: misc
 Priority: optional
 Maintainer: Rémi Palancher <remi-externe.palancher@edf.fr>
