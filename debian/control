@@ -1,7 +1,7 @@
 Source: mariadb-5.5
 Section: misc
 Priority: optional
-Maintainer: MariaDB Developers <maria-developers@lists.launchpad.net>
+Maintainer: Rémi Palancher <remi-externe.palancher@edf.fr>
 XSBC-Original-Maintainer: Maria Developers <maria-developers@lists.launchpad.net>
 Uploaders: MariaDB Developers <maria-developers@lists.launchpad.net>
 Build-Depends: libtool (>= 1.4.2-7), procps | hurd,  debhelper, file (>= 3.28),
