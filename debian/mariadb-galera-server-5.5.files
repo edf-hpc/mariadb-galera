@@ -10,8 +10,6 @@ usr/lib/mysql/plugin/handlersocket.so
 usr/lib/mysql/plugin/sql_errlog.so
 usr/lib/mysql/plugin/server_audit.so
 usr/lib/libhsclient.so.*
-etc/apparmor.d/usr.sbin.mysqld
-usr/share/apport/package-hooks/source_mariadb-5.5.py
 etc/mysql/debian-start
 etc/mysql/conf.d/mysqld_safe_syslog.cnf
 usr/bin/msql2mysql
@@ -106,6 +104,10 @@ usr/share/mysql/mysql_system_tables_data.sql
 usr/share/mysql/mysql_system_tables.sql
 usr/share/mysql/mysql_performance_tables.sql
 usr/share/mysql/mysql_test_data_timezone.sql
-@TOKUDB_DEB_FILES@
+usr/lib/mysql/plugin/ha_tokudb.so
+etc/mysql/conf.d/tokudb.cnf
+usr/bin/tokuftdump
+usr/share/doc/mariadb-galera-server-5.5/README-TOKUDB
+usr/share/doc/mariadb-galera-server-5.5/README.md
 usr/share/mysql/wsrep.cnf
 usr/share/mysql/wsrep_notify
