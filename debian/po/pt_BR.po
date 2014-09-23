@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: mysql-dfsg-5.1\n"
-"Report-Msgid-Bugs-To: mariadb-5.5@packages.debian.org\n"
-"POT-Creation-Date: 2012-01-12 13:08+0100\n"
+"Report-Msgid-Bugs-To: remi-externe.palancher@edf.fr\n"
+"POT-Creation-Date: 2013-09-09 12:48+0300\n"
 "PO-Revision-Date: 2007-04-21 15:59-0300\n"
 "Last-Translator: André Luís Lopes <andrelop@debian.org>\n"
 "Language-Team: Debian-BR Project <debian-l10n-portuguese@lists.debian.org>\n"
@@ -36,8 +36,8 @@ msgstr "Um arquivo de nome /var/lib/mysql/debian-*.flag existe no sistema."
 #: ../mariadb-galera-server-5.5.templates:2001
 #, fuzzy
 #| msgid ""
-#| "Such file is an indication that a mariadb-server package with a higher "
-#| "version has been installed earlier."
+#| "Such file is an indication that a mariadb-galera-server package with a "
+#| "higher version has been installed earlier."
 msgid ""
 "Such a file is an indication that a mariadb-server package with a higher "
 "version has been installed previously."
@@ -101,40 +101,29 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../mariadb-galera-server-5.5.templates:4001
+#, fuzzy
+#| msgid ""
+#| "If you're removing the MariaDB package in order to later install a more "
+#| "recent version or if a different mariadb-galera-server package is already "
+#| "using it, the data should be kept."
 msgid ""
 "If you're removing the MariaDB package in order to later install a more "
 "recent version or if a different mariadb-server package is already using it, "
 "the data should be kept."
 msgstr ""
 "Caso você esteja removendo o pacote MariaDB para posteriormente instalar uma "
-"versão mais recente ou, caso uma versão diferente do pacote mariadb-server "
-"esteja sendo utilizada, os dados deverão ser mantidos."
-
-#. Type: boolean
-#. Description
-#: ../mariadb-galera-server-5.5.templates:5001
-msgid "Start the MariaDB server on boot?"
-msgstr "Iniciar o servidor MariaDB junto a inicialização da máquina?"
-
-#. Type: boolean
-#. Description
-#: ../mariadb-galera-server-5.5.templates:5001
-msgid ""
-"The MariaDB server can be launched automatically at boot time or manually "
-"with the '/etc/init.d/mysql start' command."
-msgstr ""
-"O servidor MariaDB pode ser iniciado automaticamente junto a inicialização "
-"da máquina ou manualmente com o comando '/etc/init.d/mysql start'."
+"versão mais recente ou, caso uma versão diferente do pacote mariadb-galera-"
+"server esteja sendo utilizada, os dados deverão ser mantidos."
 
 #. Type: password
 #. Description
-#: ../mariadb-galera-server-5.5.templates:6001
+#: ../mariadb-galera-server-5.5.templates:5001
 msgid "New password for the MariaDB \"root\" user:"
 msgstr "Nova senha para o usuário \"root\" do MariaDB:"
 
 #. Type: password
 #. Description
-#: ../mariadb-galera-server-5.5.templates:6001
+#: ../mariadb-galera-server-5.5.templates:5001
 msgid ""
 "While not mandatory, it is highly recommended that you set a password for "
 "the MariaDB administrative \"root\" user."
@@ -144,7 +133,7 @@ msgstr ""
 
 #. Type: password
 #. Description
-#: ../mariadb-galera-server-5.5.templates:6001
+#: ../mariadb-galera-server-5.5.templates:5001
 #, fuzzy
 #| msgid "If that field is left blank, the password will not be changed."
 msgid "If this field is left blank, the password will not be changed."
@@ -152,7 +141,7 @@ msgstr "Caso este campo seja deixado em branco, a senha não sera mudada."
 
 #. Type: password
 #. Description
-#: ../mariadb-galera-server-5.5.templates:7001
+#: ../mariadb-galera-server-5.5.templates:6001
 #, fuzzy
 #| msgid "New password for the MySQL \"root\" user:"
 msgid "Repeat password for the MariaDB \"root\" user:"
@@ -160,13 +149,13 @@ msgstr "Nova senha para o usuário \"root\" do MariaDB:"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:8001
+#: ../mariadb-galera-server-5.5.templates:7001
 msgid "Unable to set password for the MariaDB \"root\" user"
 msgstr "Impossível definir senha para o usuário \"root\" do MariaDB"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:8001
+#: ../mariadb-galera-server-5.5.templates:7001
 msgid ""
 "An error occurred while setting the password for the MariaDB administrative "
 "user. This may have happened because the account already has a password, or "
@@ -179,7 +168,7 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:8001
+#: ../mariadb-galera-server-5.5.templates:7001
 #, fuzzy
 #| msgid ""
 #| "You should check the account's password after tha package installation."
@@ -188,7 +177,7 @@ msgstr "Você deverá checar a senha dessa conta após a instalação deste paco
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:8001
+#: ../mariadb-galera-server-5.5.templates:7001
 #, fuzzy
 #| msgid ""
 #| "Please read the /usr/share/doc/mysql-server-5.1/README.Debian file for "
@@ -197,35 +186,69 @@ msgid ""
 "Please read the /usr/share/doc/mariadb-server-5.5/README.Debian file for "
 "more information."
 msgstr ""
-"Por favor, leia o arquivo /usr/share/doc/mariadb-server-5.5/README.Debian "
-"para maiores informações."
+"Por favor, leia o arquivo /usr/share/doc/mariadb-galera-server-5.5/README."
+"Debian para maiores informações."
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:9001
+#: ../mariadb-galera-server-5.5.templates:8001
 msgid "Password input error"
 msgstr ""
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:9001
+#: ../mariadb-galera-server-5.5.templates:8001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr ""
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:10001
+#: ../mariadb-galera-server-5.5.templates:9001
 msgid "NDB Cluster seems to be in use"
 msgstr ""
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:10001
+#: ../mariadb-galera-server-5.5.templates:9001
 msgid ""
 "MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the new "
 "mysql-cluster package and remove all lines starting with \"ndb\" from all "
 "config files below /etc/mysql/."
 msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../mariadb-galera-server-5.5.templates:10001
+msgid "Really migrate to MariaDB?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../mariadb-galera-server-5.5.templates:10001
+msgid ""
+"MariaDB is a drop-in replacement for MySQL. It will use your current "
+"configuration file (my.cnf) and current databases."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../mariadb-galera-server-5.5.templates:10001
+msgid ""
+"Note that MariaDB has some enhanced features, which do not exist in MySQL "
+"and thus migration back to MySQL might not always work, at least not as "
+"automatically as migrating from MySQL to MariaDB."
+msgstr ""
+
+#~ msgid "Start the MariaDB server on boot?"
+#~ msgstr "Iniciar o servidor MariaDB junto a inicialização da máquina?"
+
+#~ msgid ""
+#~ "The MariaDB server can be launched automatically at boot time or manually "
+#~ "with the '/etc/init.d/mysql start' command."
+#~ msgstr ""
+#~ "O servidor MariaDB pode ser iniciado automaticamente junto a "
+#~ "inicialização da máquina ou manualmente com o comando '/etc/init.d/mysql "
+#~ "start'."
 
 #~ msgid ""
 #~ "To use MariaDB, the following entries for users and groups should be "

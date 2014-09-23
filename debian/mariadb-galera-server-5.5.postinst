@@ -4,7 +4,7 @@
 
 if [ -n "$DEBIAN_SCRIPT_DEBUG" ]; then set -v -x; DEBIAN_SCRIPT_TRACE=1; fi
 ${DEBIAN_SCRIPT_TRACE:+ echo "#42#DEBUG# RUNNING $0 $*" 1>&2 }
- 
+
 export PATH=$PATH:/sbin:/usr/sbin:/bin:/usr/bin
 
 # This command can be used as pipe to syslog. With "-s" it also logs to stderr.
@@ -61,7 +61,7 @@ EOF
 # In case the server wasn't running at all it should be ok if the stop
 # script fails. I can't tell at this point because of the cleaned /var/run.
 set +e; invoke stop; set -e
-    
+
 case "$1" in
   configure)
     mysql_datadir=/usr/share/mysql
@@ -97,8 +97,8 @@ with a symlink, then upgraded to a new version of mysql, and then dpkg
 removed your symlink (see #182747 and others).  the mysql packages noticed
 that this happened, and as a workaround have restored it.  however, because
 /var/lib/mysql seems to have been re-created in the meantime, and because
-we don't want to rm -rf something we don't know as much about, we're going
-to leave this unexpected directory here.  if your database looks normal,
+we don't want to rm -rf something we don't know as much about, we are going
+to leave this unexpected directory here. If your database looks normal,
 and this is not a symlink to your database, you should be able to blow
 this all away.
 
@@ -107,7 +107,7 @@ EOF
         fi
 	rmdir $mysql_upgradedir 2>/dev/null || true
     done
-    
+
     # Ensure the existence and right permissions for the database and
     # log files.
     if [ ! -d "$mysql_statedir"       -a ! -L "$mysql_statedir"       ]; then mkdir "$mysql_statedir"; fi
@@ -141,10 +141,10 @@ EOF
     # This will fail if we are upgrading an existing database; in this case
     # mysql_upgrade, called from the /etc/init.d/mysql start script, will
     # handle things.
-    # Debian: beware of the bashisms... 
-    # Debian: can safely run on upgrades with existing databases 
+    # Debian: beware of the bashisms...
+    # Debian: can safely run on upgrades with existing databases
     set +e
-    /bin/bash /usr/bin/mysql_install_db --rpm --user=mysql 2>&1 | $ERR_LOGGER
+    bash /usr/bin/mysql_install_db --rpm --user=mysql 2>&1 | $ERR_LOGGER
     set -e
     
     ## On every reconfiguration the maintenance user is recreated.
@@ -165,7 +165,7 @@ EOF
     #   the old query which always succeeds and then the new which may or may not.
 
     # recreate the credentials file if not present or without mysql_upgrade stanza
-    dc=$mysql_cfgdir/debian.cnf; 
+    dc=$mysql_cfgdir/debian.cnf;
     if [ -e "$dc" -a -n "`fgrep mysql_upgrade $dc 2>/dev/null`" ]; then
         pass="`sed -n 's/^[     ]*password *= *// p' $dc | head -n 1`"
     else
@@ -191,10 +191,10 @@ EOF
 
     # update privilege tables
     password_column_fix_query=`/bin/echo -e \
-        "USE mysql\n" \
-        "ALTER TABLE user CHANGE Password Password char(41) character set latin1 collate latin1_bin DEFAULT '' NOT NULL"`;
+        "USE mysql;\n" \
+        "ALTER TABLE user CHANGE Password Password char(41) character set latin1 collate latin1_bin DEFAULT '' NOT NULL;"`
     replace_query=`/bin/echo -e \
-        "USE mysql\n" \
+        "USE mysql;\n" \
         "SET sql_mode='';\n" \
         "REPLACE INTO user SET " \
         "  host='localhost', user='debian-sys-maint', password=password('$pass'), " \

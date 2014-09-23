@@ -1,0 +1,6 @@
+# OK, embedded has same source
+mariadb-client-5.5: embedded-library usr/bin/mysqladmin: libmysqlclient
+mariadb-client-5.5: embedded-library usr/bin/mysqldump: libmysqlclient
+mariadb-client-5.5: embedded-library usr/bin/mysqlimport: libmysqlclient
+mariadb-client-5.5: embedded-library usr/bin/mysqlshow: libmysqlclient
+mariadb-client-5.5: embedded-library usr/bin/mysqlslap: libmysqlclient

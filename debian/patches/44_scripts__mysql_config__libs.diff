@@ -1,23 +1,18 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 99-unnamed.dpatch by  <ch@debian.org>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: Removes unnecessary library dependencies. See #390692
+Author: Christian Hammers <ch@debian.org>
+Description: Removes unnecessary library dependencies. See #390692
 
-@DPATCH@
-diff -Nur mysql-dfsg-5.1-5.1.31.orig/scripts/mysql_config.sh mysql-dfsg-5.1-5.1.31/scripts/mysql_config.sh
---- mysql-dfsg-5.1-5.1.31.orig/scripts/mysql_config.sh  2009-01-19 17:30:55.000000000 +0100
-+++ mysql-dfsg-5.1-5.1.31/scripts/mysql_config.sh       2009-02-08 17:17:48.000000000 +0100
-@@ -106,10 +106,10 @@
+--- old/scripts/mysql_config.sh	2014-04-17 22:07:38.668960760 +0300
++++ new/scripts/mysql_config.sh	2014-04-17 22:08:33.528958126 +0300
+@@ -107,10 +107,10 @@
  
  # Create options 
  # We intentionally add a space to the beginning and end of lib strings, simplifies replace later
 -libs=" $ldflags -L$pkglibdir @RPATH_OPTION@ -lmysqlclient @ZLIB_DEPS@ @NON_THREADED_LIBS@"
-+libs=" $ldflags -L$pkglibdir @RPATH_OPTION@ -lmysqlclient"
++libs=" $ldflags -L$pkglibdir @RPATH_OPTION@ -lmariadbclient"
  libs="$libs @openssl_libs@ @STATIC_NSS_FLAGS@ "
 -libs_r=" $ldflags -L$pkglibdir  @RPATH_OPTION@ -lmysqlclient_r @ZLIB_DEPS@ @CLIENT_LIBS@ @openssl_libs@ "
 -embedded_libs=" $ldflags -L$pkglibdir @RPATH_OPTION@ -lmysqld @LIBDL@ @ZLIB_DEPS@ @LIBS@ @WRAPLIBS@ @openssl_libs@ "
-+libs_r=" $ldflags -L$pkglibdir  @RPATH_OPTION@ -lmysqlclient_r @CLIENT_LIBS@ @openssl_libs@ "
++libs_r=" $ldflags -L$pkglibdir  @RPATH_OPTION@ -lmariadbclient_r @CLIENT_LIBS@ @openssl_libs@ "
 +embedded_libs=" $ldflags -L$pkglibdir @RPATH_OPTION@ -lmysqld @LIBDL@ @WRAPLIBS@ @openssl_libs@ "
  
  if [ -r "$pkglibdir/libmygcc.a" ]; then

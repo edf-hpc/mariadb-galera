@@ -14,10 +14,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mysql-dfsg-5.1 5.1.37-1\n"
-"Report-Msgid-Bugs-To: mariadb-5.5@packages.debian.org\n"
-"POT-Creation-Date: 2012-01-12 13:08+0100\n"
-"PO-Revision-Date: 2009-09-01 08:25+0900\n"
+"Project-Id-Version: mariadb-5.5 5.5.32-1\n"
+"Report-Msgid-Bugs-To: remi-externe.palancher@edf.fr\n"
+"POT-Creation-Date: 2013-09-09 12:48+0300\n"
+"PO-Revision-Date: 2013-09-09 18:48+0900\n"
 "Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "Language: ja\n"
@@ -42,12 +42,16 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../mariadb-galera-server-5.5.templates:2001
+#, fuzzy
+#| msgid ""
+#| "Such a file is an indication that a mariadb-galera-server package with a "
+#| "higher version has been installed previously."
 msgid ""
 "Such a file is an indication that a mariadb-server package with a higher "
 "version has been installed previously."
 msgstr ""
-"このファイルが意味するのは、以前により新しいバージョンの mariadb-server パッ"
-"ケージがインストールされていたことを示します。"
+"このファイルが意味するのは、以前により新しいバージョンの mariadb-galera-"
+"server パッケージがインストールされていたことを示します。"
 
 #. Type: boolean
 #. Description
@@ -102,40 +106,29 @@ msgstr ""
 #. Type: boolean
 #. Description
 #: ../mariadb-galera-server-5.5.templates:4001
+#, fuzzy
+#| msgid ""
+#| "If you're removing the MariaDB package in order to later install a more "
+#| "recent version or if a different mariadb-galera-server package is already "
+#| "using it, the data should be kept."
 msgid ""
 "If you're removing the MariaDB package in order to later install a more "
 "recent version or if a different mariadb-server package is already using it, "
 "the data should be kept."
 msgstr ""
 "後でより新しいバージョンのものをインストールしようとするために MariaDB パッ"
-"ケージを削除しようとしている、あるいは別の mariadb-server パッケージを既に"
-"使っている場合、データは保持する必要があります。"
-
-#. Type: boolean
-#. Description
-#: ../mariadb-galera-server-5.5.templates:5001
-msgid "Start the MariaDB server on boot?"
-msgstr "MariaDB をシステム起動時に開始しますか?"
-
-#. Type: boolean
-#. Description
-#: ../mariadb-galera-server-5.5.templates:5001
-msgid ""
-"The MariaDB server can be launched automatically at boot time or manually "
-"with the '/etc/init.d/mysql start' command."
-msgstr ""
-"MariaDB の起動方法について、システム起動時に自動的に開始するか、あるいは '/"
-"etc/init.d/mysql start' と手で入力して起動するかを選べます。"
+"ケージを削除しようとしている、あるいは別の mariadb-galera-server パッケージを"
+"既に使っている場合、データは保持する必要があります。"
 
 #. Type: password
 #. Description
-#: ../mariadb-galera-server-5.5.templates:6001
+#: ../mariadb-galera-server-5.5.templates:5001
 msgid "New password for the MariaDB \"root\" user:"
 msgstr "MariaDB の \"root\" ユーザに対する新しいパスワード:"
 
 #. Type: password
 #. Description
-#: ../mariadb-galera-server-5.5.templates:6001
+#: ../mariadb-galera-server-5.5.templates:5001
 msgid ""
 "While not mandatory, it is highly recommended that you set a password for "
 "the MariaDB administrative \"root\" user."
@@ -145,25 +138,25 @@ msgstr ""
 
 #. Type: password
 #. Description
-#: ../mariadb-galera-server-5.5.templates:6001
+#: ../mariadb-galera-server-5.5.templates:5001
 msgid "If this field is left blank, the password will not be changed."
 msgstr "この値を空のままにしておいた場合は、パスワードは変更されません。"
 
 #. Type: password
 #. Description
-#: ../mariadb-galera-server-5.5.templates:7001
+#: ../mariadb-galera-server-5.5.templates:6001
 msgid "Repeat password for the MariaDB \"root\" user:"
 msgstr "MariaDB の \"root\" ユーザに対する新しいパスワード:"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:8001
+#: ../mariadb-galera-server-5.5.templates:7001
 msgid "Unable to set password for the MariaDB \"root\" user"
 msgstr "MariaDB の \"root\" ユーザのパスワードを設定できません"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:8001
+#: ../mariadb-galera-server-5.5.templates:7001
 msgid ""
 "An error occurred while setting the password for the MariaDB administrative "
 "user. This may have happened because the account already has a password, or "
@@ -175,50 +168,79 @@ msgstr ""
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:8001
+#: ../mariadb-galera-server-5.5.templates:7001
 msgid "You should check the account's password after the package installation."
 msgstr ""
 "パッケージのインストール後、アカウントのパスワードを確認する必要があります。"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:8001
+#: ../mariadb-galera-server-5.5.templates:7001
 #, fuzzy
 #| msgid ""
-#| "Please read the /usr/share/doc/mariadb-server-5.5/README.Debian file for "
-#| "more information."
+#| "Please read the /usr/share/doc/mariadb-galera-server-5.5/README.Debian "
+#| "file for more information."
 msgid ""
 "Please read the /usr/share/doc/mariadb-server-5.5/README.Debian file for "
 "more information."
 msgstr ""
-"詳細は /usr/share/doc/mariadb-server-5.5/README.Debian を参照してください。"
+"詳細は /usr/share/doc/mariadb-galera-server-5.5/README.Debian を参照してくだ"
+"さい。"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:9001
+#: ../mariadb-galera-server-5.5.templates:8001
 msgid "Password input error"
 msgstr "パスワード入力エラー"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:9001
+#: ../mariadb-galera-server-5.5.templates:8001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr "入力された二つのパスワードが一致しません。再入力してください。"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:10001
+#: ../mariadb-galera-server-5.5.templates:9001
 msgid "NDB Cluster seems to be in use"
 msgstr "NDB クラスタが利用されているようです"
 
 #. Type: error
 #. Description
-#: ../mariadb-galera-server-5.5.templates:10001
+#: ../mariadb-galera-server-5.5.templates:9001
 msgid ""
 "MySQL-5.1 no longer provides NDB Cluster support. Please migrate to the new "
 "mysql-cluster package and remove all lines starting with \"ndb\" from all "
 "config files below /etc/mysql/."
 msgstr ""
-"MySQL-5.1 では NDB クラスタのサポートを提供しなくなっています。新たな mysql-"
+"MySQL-5.1 で NDB クラスタのサポートを提供しなくなりました。新たな mysql-"
 "cluster パッケージに移行して、/etc/mysql 以下の設定ファイルすべてから「ndb」"
 "で始まる行を削除してください。"
+
+#. Type: boolean
+#. Description
+#: ../mariadb-galera-server-5.5.templates:10001
+msgid "Really migrate to MariaDB?"
+msgstr "本当に MariaDB に移行しますか?"
+
+#. Type: boolean
+#. Description
+#: ../mariadb-galera-server-5.5.templates:10001
+msgid ""
+"MariaDB is a drop-in replacement for MySQL. It will use your current "
+"configuration file (my.cnf) and current databases."
+msgstr ""
+"MariaDB は MySQL をそのまま置き換えられる代替です。現在の設定ファイル (my."
+"cnf) と現在のデータベースを利用します。"
+
+#. Type: boolean
+#. Description
+#: ../mariadb-galera-server-5.5.templates:10001
+msgid ""
+"Note that MariaDB has some enhanced features, which do not exist in MySQL "
+"and thus migration back to MySQL might not always work, at least not as "
+"automatically as migrating from MySQL to MariaDB."
+msgstr ""
+"MariaDB には MySQL に存在していない機能の拡張がいくらか存在し、そのため "
+"MySQL に再び移行する場合は、MySQL から MariaDB への移行のような自動での移行が"
+"常にできるとは限りません。"

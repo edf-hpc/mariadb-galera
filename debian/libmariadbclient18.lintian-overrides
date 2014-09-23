@@ -1,0 +1,5 @@
+# OK, file names don't conflict with the MySQL version
+libmariadbclient18: arch-dependent-file-not-in-arch-specific-directory usr/lib/mysql/plugin/dialog.so
+libmariadbclient18: arch-dependent-file-not-in-arch-specific-directory usr/lib/mysql/plugin/mysql_clear_password.so
+# embedded libs are OK
+libmariadbclient18: embedded-library usr/lib/x86_64-linux-gnu/libmariadbclient.so.18.0.0: libmysqlclient
