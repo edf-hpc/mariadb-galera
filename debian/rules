@@ -120,13 +120,11 @@ endif
 	    -DINSTALL_LIBDIR=lib/$(DEB_HOST_MULTIARCH) \
 	    -DINSTALL_PLUGINDIR=lib/mysql/plugin \
 		-DDEB=1 ..'
-	touch $@
 
 # This is needed, otherwise 'make test' will run before binaries have been built
 override_dh_auto_build:
 	@echo "RULES.$@"
 	cd $(builddir) && $(MAKE)
-	touch $@
 
 override_dh_auto_test:
 	@echo "RULES.$@"
@@ -190,7 +188,6 @@ override_dh_auto_install:
 	
 	# mariadb-test
 	mv $(TMP)/usr/mysql-test $(TMP)/usr/share/mysql
-	touch $@
 
 override_dh_installlogrotate-arch:
 	dh_installlogrotate --name mysql-server
