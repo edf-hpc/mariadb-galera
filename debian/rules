@@ -99,12 +99,6 @@ ifneq (,$(filter $(ARCH), kfreebsd-i386 kfreebsd-amd64))
 	rm debian/libmariadbclient18.symbols
 endif
 	
-	# Rename shared libraries SONAME and filenames
-	# libmysqlclient18.so > libmariadbclient18.so etc
-	sed -i 's/mysqlclient/mariadbclient/g' client/CMakeLists.txt tests/CMakeLists.txt scripts/CMakeLists.txt
-	sed -i 's/mysqlclient/mariadbclient/g' libmysql/CMakeLists.txt libmysql/libmysql_versions.ld.in
-	sed -i 's/mysqlclient/mariadbclient/g' man/mysql_config.1
-	sed -i 's/mysqlclient/mariadbclient/g' scripts/make_win_bin_dist scripts/mysql_config.sh scripts/mysql_config.pl.in
 	# Patch 44_scripts__mysql_config__libs also contains 'mysqlclient' but is compatible with this
 	# Stuff in storage/ndb/* is not compiled, no need to sed it.
 	# Neither does RPM packaging related files or comments in other code need sedding.

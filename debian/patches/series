@@ -11,3 +11,4 @@
 82_extend_default_test_timeout_for_tokudb.diff
 90_spelling.diff
 99_remove_rename_mariadb-server_files_in.diff
+rename_mysql_into_mariadb
