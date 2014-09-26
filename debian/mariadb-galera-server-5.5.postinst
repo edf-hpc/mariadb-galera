@@ -14,8 +14,8 @@ ERR_LOGGER="logger -p daemon.err -t mysqld_safe -i"
 set -o pipefail
 
 invoke() {
-  if [ -x /usr/sbin/invoke-rc.d ]; then
-    invoke-rc.d mysql $1
+  if [ -x /bin/systemctl ]; then
+    systemctl $1 mysql
   else
     /etc/init.d/mysql $1
   fi
@@ -262,6 +262,29 @@ if [ "$1" = "configure" ]; then
 fi
 
 db_stop # in case invoke failes
+
+# Normally: automatically added by dh_systemd_enable
+# This will only remove masks created by d-s-h on package removal.
+deb-systemd-helper unmask mysql.service >/dev/null || true
+
+# was-enabled defaults to true, so new installations run enable.
+if deb-systemd-helper --quiet was-enabled mysql.service; then
+	# Enables the unit on first installation, creates new
+	# symlinks on upgrades if the unit file has changed.
+	deb-systemd-helper enable mysql.service >/dev/null || true
+else
+	# Update the statefile to add new symlinks (if any), which need to be
+	# cleaned up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state mysql.service >/dev/null || true
+fi
+# End automatically added section
+
+# Normally: automatically added by dh_systemd_start
+if [ -d /run/systemd/system ]; then
+	systemctl --system daemon-reload >/dev/null || true
+	deb-systemd-invoke start mysql.service >/dev/null || true
+fi
+# End automatically added section
 
 #DEBHELPER#
 

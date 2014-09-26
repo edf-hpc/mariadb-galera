@@ -1,0 +1,17 @@
+[Unit]
+Description=MySQL Community Server
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+Alias=mysql.service
+
+[Service]
+EnvironmentFile=-/etc/default/mysql
+ExecStartPre=/usr/bin/mysql-systemd-start pre
+ExecStart=/usr/bin/mysqld_safe $MYSQLD_ARGS
+ExecStartPost=/usr/bin/mysql-systemd-start post
+TimeoutSec=30
+#Restart=always
+# send SIGTERM only to mysql_safe, not to all processes including mysqld
+KillMode=process

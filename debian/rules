@@ -192,10 +192,11 @@ override_dh_auto_install:
 override_dh_installlogrotate-arch:
 	dh_installlogrotate --name mysql-server
 
-# Start mysql in runlevel 19 before 20 where apache, proftpd etc gets
-# started which might depend on a running database server.
-override_dh_installinit-arch:
-	dh_installinit --name=mysql -- defaults 19 21
+override_dh_installinit:
+	# needs to be manually done with debhelper < 9.20130504
+	install -d debian/mariadb-galera-server-5.5/lib/systemd/system
+	install -p -m644 debian/mariadb-galera-server-5.5.mysql.service debian/mariadb-galera-server-5.5/lib/systemd/system/mysql.service
+	#dh_installinit --name=mysql -- defaults 19 21
 
 override_dh_installcron-arch:
 	dh_installcron --name mysql-server
