@@ -20,6 +20,7 @@ Build-Depends: bison,
                po-debconf,
                psmisc,
                zlib1g-dev (>= 1:1.1.3-5),
+               libboost-dev,
                dh-systemd (>= 1.5)
 Standards-Version: 3.9.5
 Homepage: http://mariadb.org/
