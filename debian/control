@@ -175,6 +175,7 @@ Depends: libdbi-perl,
 # Should be expanded by dh_systemd_enable within misc but it doesn't work as
 # expected since the name of the service file is different of the package
          init-system-helpers (>= 1.18~),
+         rsync,
          ${misc:Depends},
          ${shlibs:Depends}
 Conflicts: mariadb-tokudb-engine-10.0,
